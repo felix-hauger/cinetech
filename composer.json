@@ -1,0 +1,19 @@
+{
+    "name": "fel/cinetech",
+    "description": "Movies & TV shows library with auth system using TMDB API",
+    "require": {
+        "altorouter/altorouter": "^2.0",
+        "fakerphp/faker": "^1.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "felix-hauger",
+            "email": "felix.og@laposte.net"
+        }
+    ]
+}
