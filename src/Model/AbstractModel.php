@@ -8,12 +8,12 @@ use \App\Database\DbConnection;
 abstract class AbstractModel
 {
     /**
-     * @var ?PDO used to connect to database
+     * @var ?PDO Used to connect to database
      */
     protected ?PDO $_db = null;
 
     /**
-     * @var string identifies child class table name
+     * @var string Identifies child model class table name
      */
     protected string $_table;
 
@@ -21,22 +21,22 @@ abstract class AbstractModel
     {
         $this->_db = DbConnection::getDb();
 
-        // get child class (on the context where it is called)
+        // Get child class (on the context where it is called)
         $class = get_class($this);
 
-        // explode the namespace into an array
+        // Explode the namespace into an array
         $class = explode('\\', $class);
 
-        // set $_table property value to the last array entry case lowered
+        // Set $_table property value to the last array entry case lowered
         $this->_table = '`' . strtolower(array_pop($class)) . '`';
 
-        // ! WARNING: at current version you must still define $_table property
+        // ! WARNING: At current version you must still define $_table property
         // ! WARNING: in child class if the model / table is more than 1 word long
-        // ! WARNING: exemple: model => UserAddress, table name => user_address
+        // ! WARNING: Exemple: model => UserAddress, table name => user_address
     }
 
     /**
-     * @return array of sql results if request executed successfully
+     * @return array Sql results if request executed successfully
      */
     public function findAll(): array|false
     {
@@ -50,8 +50,8 @@ abstract class AbstractModel
     }
 
     /**
-     * @param int id representing id column in database
-     * @return array row from database if request executed successfully
+     * @param int $id Representing id column in database
+     * @return array Row from database if request executed successfully
      */
     public function find(int $id): array|false
     {
@@ -67,8 +67,8 @@ abstract class AbstractModel
     }
 
     /**
-     * @param int id representing id column in database
-     * @return bool depending if request is successfull or not
+     * @param int Id representing id column in database
+     * @return bool Depending if request is successfull or not
      */
     public function delete(int $id): bool
     {

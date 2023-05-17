@@ -3,7 +3,8 @@
     "description": "Movies & TV shows library with auth system using TMDB API",
     "require": {
         "altorouter/altorouter": "^2.0",
-        "fakerphp/faker": "^1.21"
+        "fakerphp/faker": "^1.21",
+        "guzzlehttp/guzzle": "^7.6"
     },
     "autoload": {
         "psr-4": {
