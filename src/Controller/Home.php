@@ -15,7 +15,9 @@ use App\Renderer;
  */
 class Home
 {
-
+    /**
+     * @var string static HTML page title
+     */
     private static string $_page_title = 'Homepage';
 
     /**

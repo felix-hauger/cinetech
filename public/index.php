@@ -6,7 +6,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPAR
 
 DotEnv::setEnvVariables();
 
-setcookie('api_key', $_ENV['API_KEY'], time() + 3600 * 24 * 365 * 10, '/cinetech', '', false, false);
+setcookie('key', $_ENV['API_KEY'], time() + 3600 * 24 * 365 * 10, '/cinetech', '', false, false);
 
 $router = new AltoRouter();
 
