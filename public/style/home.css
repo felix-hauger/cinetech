@@ -2,52 +2,56 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: consolas;
-} */
-
+    background: #bbb;
+    color: #222;
+    font-family: sans-serif;
+}
 
 #main-wrapper {
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
+    background: #ddd;
 }
 
 #popular-container {
-    /* margin-top: -40px; */
-    /* margin-bottom: -40px; */
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    /* overflow-x: auto; */
+}
+
+#popular-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#popular-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+#popular-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
 }
 
 #popular-container .movie-card {
     position: relative;
     cursor: pointer;
-    margin-top: -50px;
-    margin-bottom: -150px;
-}
-
-
-#popular-container .movie-card:first-child {
-    /* margin-top: 0; */
+    padding-bottom: 70px;
+    padding: 25px 30px 70px 30px;
 }
 
 #popular-container .movie-card .face {
     width: 200px;
     height: 300px;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 #popular-container .movie-card .face.face1 {
@@ -67,7 +71,7 @@ body{
 
 #popular-container .movie-card .face.face1 .content {
     opacity: 0.2;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 #popular-container .movie-card:hover .face.face1 .content {
@@ -120,7 +124,7 @@ body{
 
 #popular-container .movie-card .face.face2 .content a {
     margin: 15px 0 0;
-    display:  inline-block;
+    display: inline-block;
     text-decoration: none;
     font-weight: 900;
     color: #333;

@@ -8,24 +8,29 @@ const cookieValue = document.cookie
 
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
+// ---- MOST POPULAR ----
 fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&api_key=' + cookieValue, options)
     .then(response => response.json())
     .then(response => {
-        // ---- MOST POPULAR ----
-
         // console.log(response);
 
-        const container = document.querySelector("#popular-container");
+        const container = document.querySelector("#popular-container"),
+            swiperContainer = document.createElement('swiper-container');
+
+        swiperContainer.setAttribute("slides-per-view", 5);
 
         // console.log(container);
 
         let list = new DocumentFragment();
 
+        list.append(swiperContainer);
+
         for (let i = 0; i < response.results.length; i++) {
-            // ---- Face 1 ----
+            const swiperSlide = document.createElement("swiper-slide");
             const card = document.createElement("div");
             card.classList.add("movie-card");
 
+            // ---- Face 1 ----
             const face1 = document.createElement("div");
             face1.classList.add("face", "face1");
 
@@ -64,9 +69,12 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
             face2.append(face2Content);
 
             card.append(face1, face2);
+            swiperSlide.append(card);
 
-            list.append(card);
+            swiperContainer.append(swiperSlide);
         }
+
+
 
         container.innerHTML = "";
         container.append(list);
