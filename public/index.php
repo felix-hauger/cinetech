@@ -10,8 +10,10 @@ setcookie('key', $_ENV['API_KEY'], time() + 3600 * 24 * 365 * 10, '/cinetech', '
 
 $router = new AltoRouter();
 
+define('BASE_PATH', '/cinetech');
+
 // Must set base path if the app is not at the website root
-$router->setBasePath('/cinetech');
+$router->setBasePath(BASE_PATH);
 
 // Map route for homepage
 $router->map('GET', '/', 'App\\Controller\\Home#index', 'homepage');
