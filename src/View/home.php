@@ -16,11 +16,13 @@
 <body>
     <div id="main-wrapper">
         <h1><?= $title ?></h1>
-    
-        <h2>More popular</h2>
-    
-        <div id="popular-container" class="popular-container">
 
+        <div id="popular-container" class="slider-container">
+            <h2>Popular movies</h2>
+        </div>
+
+        <div id="trending-tv-container" class="slider-container">
+            <h2>Trending TV shows</h2>
         </div>
     </div>
 </body>
